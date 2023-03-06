@@ -1,0 +1,26 @@
+
+rabbitmq:
+  exchanges:
+    internal: internal.exchange
+  queue:
+    notification: notification.queue
+  routing-key:
+    internal-notification: internal.notification.routing-key
+
+server:
+  port: 9094
+
+spring:
+  application:
+    name: notification
+
+  kafka:
+    bootstrap-servers: localhost:9092
+
+  rabbitmq:
+    addresses:  localhost:5672
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9090/eureka
